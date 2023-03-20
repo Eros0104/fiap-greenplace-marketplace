@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean(name="carrinhoBean")
 public class CarrinhoBean {
 	private List<String> listaSelecionados;
 	private String quantidade;
@@ -29,8 +32,8 @@ public class CarrinhoBean {
 	}
 	public List<Forma> getFormasDePagamento(){
 		List<Forma> formas = new ArrayList<Forma>();
-		formas.add(new Forma(1, "Crédito"));
-		formas.add(new Forma(1, "Débito"));
+		formas.add(new Forma(1, "Credito"));
+		formas.add(new Forma(1, "Debito"));
 		formas.add(new Forma(1, "Boleto"));
 		return formas;
 	}
