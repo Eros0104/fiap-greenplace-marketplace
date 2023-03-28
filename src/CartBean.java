@@ -22,6 +22,16 @@ public class CartBean implements Serializable {
     public void setItems(List<CartItem> items) {
         this.items = items;
     }
+    
+    public double getTotalPrice() {
+    	double totalPrice = 0;
+    	
+        for (CartItem item : items) {
+            totalPrice += item.getTotalPrice();
+        }
+        
+        return totalPrice;
+    }
 
     public void addToCart(Product product) {
         for (CartItem item : items) {
