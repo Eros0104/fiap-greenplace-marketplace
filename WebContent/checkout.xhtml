@@ -1,97 +1,73 @@
 <!DOCTYPE html>
-<html
-  xmlns="http://www.w3.org/1999/xhtml"
-  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-  xmlns:h="http://xmlns.jcp.org/jsf/html"
-  xmlns:f="http://xmlns.jcp.org/jsf/core"
->
-  <h:head>
-    <title>Greenplace | Delivery</title>
-    <ui:include src="/shared/imports.xhtml" />
-  </h:head>
-  <h:body>
-    <ui:include src="/shared/header.xhtml" />
-    <div class="container">
-      <h1>Delivery Information</h1>
-      <h:form>
-        <div class="form-group">
-          <label for="name">Name:</label>
-          <h:inputText
-            id="name"
-            value="#{deliveryBean.name}"
-            required="true"
-            class="form-control"
-          />
-          <div class="invalid-feedback">Please enter your name.</div>
-        </div>
-        <div class="form-group">
-          <label for="address">Address:</label>
-          <h:inputText
-            id="address"
-            value="#{deliveryBean.address}"
-            required="true"
-            class="form-control"
-          />
-          <div class="invalid-feedback">Please enter your address.</div>
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone:</label>
-          <h:inputText
-            id="phone"
-            value="#{deliveryBean.phone}"
-            required="true"
-            class="form-control"
-          />
-          <div class="invalid-feedback">Please enter your phone number.</div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <h:inputText
-            id="email"
-            value="#{deliveryBean.email}"
-            required="true"
-            class="form-control"
-          />
-          <div class="invalid-feedback">
-            Please enter a valid email address.
-          </div>
-        </div>
-        <br />
-        <h:commandButton
-          value="Place Order"
-          action="#{deliveryBean.placeOrder}"
-          class="btn btn-primary"
-        />
-        <hr />
-        <h2>Products in Cart</h2>
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Quantity</th>
-            </tr>
-          </thead>
-          <tbody>
-            <ui:repeat value="#{cartBean.items}" var="item">
-              <tr>
-                <td>#{item.product.name}</td>
-                <td>$#{item.product.price}</td>
-                <td>#{item.quantity}</td>
-              </tr>
-            </ui:repeat>
-          </tbody>
-        </table>
-        <h3>Total: $#{cartBean.totalPrice}</h3>
-      </h:form>
-    </div>
-    <ui:include src="/shared/footer.xhtml" />
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    ></script>
-  </h:body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Greenplace | Delivery</title>
+	<ui:include src="/shared/imports.xhtml" />
+</h:head>
+<h:body>
+	<ui:include src="/shared/header.xhtml" />
+	<div class="container">
+		<h1>Delivery Information</h1>
+		<h:form>
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<h:inputText id="name" value="#{deliveryBean.name}" required="true"
+					class="form-control" />
+				<div class="invalid-feedback">Please enter your name.</div>
+			</div>
+			<div class="form-group">
+				<label for="address">Address:</label>
+				<h:inputText id="address" value="#{deliveryBean.address}"
+					required="true" class="form-control" />
+				<div class="invalid-feedback">Please enter your address.</div>
+			</div>
+			<div class="form-group">
+				<label for="phone">Phone:</label>
+				<h:inputText id="phone" value="#{deliveryBean.phone}"
+					required="true" class="form-control" />
+				<div class="invalid-feedback">Please enter your phone number.</div>
+			</div>
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<h:inputText id="email" value="#{deliveryBean.email}"
+					required="true" class="form-control" />
+				<div class="invalid-feedback">Please enter a valid email
+					address.</div>
+			</div>
+			<br />
+			<h:commandButton value="Place Order"
+				action="#{deliveryBean.placeOrder}" class="btn btn-primary" />
+			<hr />
+			<h2>Products in Cart</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Price</th>
+						<th>Quantity</th>
+					</tr>
+				</thead>
+				<tbody>
+					<ui:repeat value="#{cartBean.items}" var="item">
+						<tr>
+							<td>#{item.product.name}</td>
+							<td>$#{item.product.price}</td>
+							<td>#{item.quantity}</td>
+						</tr>
+					</ui:repeat>
+				</tbody>
+			</table>
+			<h3>Total: $#{cartBean.totalPrice}</h3>
+		</h:form>
+	</div>
+	<ui:include src="/shared/footer.xhtml" />
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</h:body>
 </html>

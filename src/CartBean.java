@@ -44,4 +44,12 @@ public class CartBean implements Serializable {
         CartItem newItem = new CartItem(product, 1);
         items.add(newItem);
     }
+    
+    public int getSize() {
+    	return items.size();
+    }
+    
+    public void cleanCart() {
+    	items = new ArrayList<CartItem>();
+    }
 }
